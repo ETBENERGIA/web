@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ETB Energía · Tu energía, sin letra pequeña</title>
-<meta name="description" content="Estudiamos tu factura de luz y gas y te decimos, claro y por escrito, si tu empresa puede pagar menos. Sin coste. Luz, gas y CAE para empresas de toda España.">
+<meta name="description" content="Estudiamos la factura de luz y gas de tu empresa y te decimos, por escrito, si puedes pagar menos. También autoconsumo fotovoltaico y Certificados de Ahorro Energético (CAE). Sin coste para tu empresa.">
 <link rel="canonical" href="https://etbenergia.es/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="ETB Energía">
 <meta property="og:title" content="ETB Energía · Tu energía, sin letra pequeña">
-<meta property="og:description" content="Estudiamos tu factura de luz y gas y te decimos, claro y por escrito, si tu empresa puede pagar menos.">
+<meta property="og:description" content="Estudiamos la factura de luz y gas de tu empresa y te decimos, por escrito, si puedes pagar menos.">
 <meta property="og:url" content="https://etbenergia.es/">
 <meta property="og:image" content="https://etbenergia.es/assets/compartir.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#D7263D">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/archivo-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <script type="application/ld+json">
@@ -31,135 +31,191 @@
   <div class="wrap">
     <a href="#inicio" class="logo" aria-label="ETB Energía, inicio"><span>ETB</span></a>
     <nav class="nav" aria-label="Principal">
-      <a href="#como">Cómo trabajamos</a>
       <a href="#servicios">Servicios</a>
+      <a href="#cae">CAE</a>
+      <a href="#autoconsumo">Autoconsumo</a>
       <a href="#colaboradores">Colaboradores</a>
-      <a href="#faq">Preguntas</a>
-      <a href="#factura" class="btn btn--rojo">Envíanos tu factura</a>
+      <a href="#preguntas">Preguntas</a>
     </nav>
+    <a class="cab__tel num" href="tel:+34692606691">692 606 691</a>
+    <a href="#factura" class="btn btn--rojo">Envíanos tu factura</a>
   </div>
 </header>
 
 <main id="contenido">
-  <section id="inicio" class="hero">
-    <div class="hero__sol" aria-hidden="true"></div>
+  <section id="inicio" class="portada">
     <div class="wrap">
-      <div class="hero__txt">
-        <span class="eyebrow">Energía para empresas</span>
-        <h1>Tu energía,<br>sin letra pequeña.</h1>
-        <p class="hero__lead">Estudiamos tu factura de luz y gas y te decimos, claro y por escrito, si puedes pagar menos. Si no hay ahorro, también te lo decimos.</p>
+      <div class="portada__txt">
+        <h1>Tu energía, <span class="linea2">sin letra pequeña.</span></h1>
+        <p class="entrada">Leemos la factura de luz y gas de tu empresa línea a línea, la comparamos con varias comercializadoras y te decimos por escrito si puedes pagar menos. Si no hay ahorro, también te lo decimos.</p>
         <div class="acciones">
           <a href="#factura" class="btn btn--rojo">Envíanos tu factura</a>
-          <a href="#como" class="btn btn--borde">Cómo trabajamos</a>
+          <a class="tel num" href="tel:+34692606691">o llama al 692 606 691</a>
         </div>
+        <ul class="promesas">
+          <li>Sin coste para tu empresa</li>
+          <li>El ahorro, en euros y por escrito</li>
+          <li>Nos ocupamos del cambio</li>
+        </ul>
       </div>
-      <div class="hero__card">
-        <div class="tarjeta" aria-label="Qué incluye tu estudio">
-          <span class="tarjeta__t">Tu estudio</span>
-          <div class="fila"><span>Tarifa actual</span><span>La de tu factura</span></div>
-          <div class="fila"><span>Mejor oferta</span><span>Comparada</span></div>
-          <div class="fila"><span>Ahorro</span><span style="color:var(--rojo)">Claro y por escrito</span></div>
+
+      <figure class="factura" aria-label="Ejemplo de factura de luz con anotaciones que explican cada concepto">
+        <div class="factura__hoja">
+          <div class="factura__cab"><strong>Factura de electricidad</strong><span>Ejemplo ilustrativo</span></div>
+          <div class="concepto concepto--marca"><span class="concepto__n">Término de potencia</span><span class="concepto__v" aria-hidden="true"></span><span class="nota nota--1">Lo que pagas por la potencia contratada, la uses o no.</span></div>
+          <div class="concepto concepto--marca"><span class="concepto__n">Término de energía</span><span class="concepto__v" aria-hidden="true"></span><span class="nota nota--2">Los kWh que consumes, a un precio que se puede negociar.</span></div>
+          <div class="concepto"><span class="concepto__n">Impuesto eléctrico</span><span class="concepto__v" aria-hidden="true"></span></div>
+          <div class="concepto concepto--marca"><span class="concepto__n">Alquiler del contador</span><span class="concepto__v" aria-hidden="true"></span><span class="nota nota--3">Un cargo fijo que conviene revisar.</span></div>
+          <div class="concepto"><span class="concepto__n">IVA</span><span class="concepto__v" aria-hidden="true"></span></div>
+          <div class="factura__total"><span>Total a pagar</span><span class="concepto__v" aria-hidden="true"></span></div>
+          <div class="letra letra--ojo" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="nota nota--4">Y esto también lo leemos: condiciones, permanencias y revisiones de precio.</span></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="servicios" class="sec sec--arena">
+    <div class="wrap">
+      <div class="cabeza">
+        <h2 class="h2">Lo que hacemos por tu empresa</h2>
+        <p class="entrada">Una sola persona de contacto para la luz, el gas, las placas y los certificados de ahorro. Sin centralitas.</p>
+      </div>
+      <ul class="indice">
+        <li>
+          <h3>Luz y gas</h3>
+          <div><p>Comparamos tu precio con las ofertas de varias comercializadoras y te proponemos la que mejor encaja con tu consumo real.</p><p class="para">Pymes, comercios e industria, también con tarifas 3.0TD y 6.XTD.</p></div>
+          <a class="enlace" href="#factura">Pedir estudio</a>
+        </li>
+        <li>
+          <h3>Renovaciones</h3>
+          <div><p>Cuando tu contrato se acerca al final, lo volvemos a revisar para que no te quedes con un precio que ya no te conviene.</p><p class="para">Para los clientes que ya trabajan con nosotros.</p></div>
+          <a class="enlace" href="#factura">Hablemos</a>
+        </li>
+        <li>
+          <h3>Autoconsumo fotovoltaico</h3>
+          <div><p>Te decimos si a tu empresa le compensa instalar placas, con los números de tu propio consumo.</p><p class="para">Naves, oficinas y comercios con consumo de día.</p></div>
+          <a class="enlace" href="#autoconsumo">Cómo lo vemos</a>
+        </li>
+        <li>
+          <h3>Certificados de Ahorro Energético</h3>
+          <div><p>Convertimos el ahorro de tus obras de aerotermia o aislamiento SATE en un ingreso.</p><p class="para">Instaladoras de aerotermia y empresas de SATE.</p></div>
+          <a class="enlace" href="#cae">Cómo funciona</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cae" class="sec oscuro cae">
+    <div class="wrap">
+      <div class="cabeza">
+        <h2 class="h2">Tus obras de aerotermia y SATE también generan ingresos.</h2>
+        <p class="entrada">Desde 2023, el ahorro de energía que consigue una obra de eficiencia se puede certificar y vender. Son los Certificados de Ahorro Energético (CAE). No es una subvención: lo compran las empresas energéticas que tienen la obligación legal de ahorrar.</p>
+      </div>
+      <ol class="flujo">
+        <li><h3>Haces la obra</h3><p>Cambias una caldera por aerotermia, aíslas una fachada con SATE u otra actuación del catálogo oficial.</p></li>
+        <li><h3>Se calcula el ahorro</h3><p>Se aplica la ficha del catálogo del Ministerio y se prepara la documentación técnica.</p></li>
+        <li><h3>Se verifica y certifica</h3><p>Una entidad verificadora acreditada por ENAC comprueba la obra y el ahorro queda certificado.</p></li>
+        <li><h3>Se vende y cobras</h3><p>Los certificados los compran las comercializadoras y otras empresas obligadas a ahorrar energía.</p></li>
+      </ol>
+      <div class="cae__pie">
+        <div class="dato">1 CAE = 1 kWh<small>de ahorro de energía final al año, según el Real Decreto 36/2023.</small></div>
+        <div>
+          <p><strong>Tú haces la obra; nosotros nos ocupamos del papeleo del CAE.</strong> Te decimos si la actuación puede generar certificados, qué documentación hace falta y nos encargamos de gestionarlo.</p>
+          <p style="margin-top:18px"><a href="#factura" class="btn btn--claro" data-motivo="Certificados de Ahorro Energético (CAE)">Consultar una obra</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="franja" aria-label="Lo esencial">
+  <section id="autoconsumo" class="sec solar">
     <div class="wrap">
-      <div class="punto">Sin coste para tu empresa</div>
-      <div class="punto">Si no hay ahorro, te lo decimos</div>
-      <div class="punto">Nos ocupamos de todo el trámite</div>
+      <div class="solar__txt">
+        <h2 class="h2">Placas solares, solo si te salen las cuentas.</h2>
+        <p class="entrada">El autoconsumo compensa cuando tu empresa gasta luz mientras hay sol. Lo comprobamos con tus facturas antes de que nadie te haga un presupuesto.</p>
+        <ul class="revisa">
+          <li>A qué horas consumes y cuánto coincide con las horas de sol.</li>
+          <li>Si tu potencia y tu tarifa actuales encajan con una instalación.</li>
+          <li>Qué tarifa te conviene después, para aprovechar los excedentes.</li>
+        </ul>
+        <div class="acciones"><a href="#factura" class="btn btn--linea" data-motivo="Autoconsumo fotovoltaico">Valorar mi caso</a></div>
+      </div>
+      <figure class="grafica">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Esquema: el consumo de una empresa durante el día y la curva de producción solar, que coinciden en las horas centrales">
+          <g stroke="#E9E1CF" stroke-width="1">
+            <line x1="40" y1="40" x2="540" y2="40"/><line x1="40" y1="110" x2="540" y2="110"/><line x1="40" y1="180" x2="540" y2="180"/>
+          </g>
+          <line x1="40" y1="250" x2="540" y2="250" stroke="#1D1A2B" stroke-width="2"/>
+          <g fill="#1D1A2B" opacity=".85" id="barras"></g>
+          <path id="sol" d="" fill="#FFC23D" fill-opacity=".55" stroke="#E8A400" stroke-width="2.5"/>
+          <g font-family="Inter, sans-serif" font-size="16" fill="#6A6578">
+            <text x="40" y="275">0 h</text><text x="165" y="275">6 h</text><text x="290" y="275" text-anchor="middle">12 h</text><text x="415" y="275" text-anchor="middle">18 h</text><text x="540" y="275" text-anchor="end">24 h</text>
+          </g>
+        </svg>
+        <figcaption><span><i class="ley" style="background:#1D1A2B"></i>Consumo de la empresa</span><span><i class="ley" style="background:#FFC23D;outline:2px solid #E8A400;outline-offset:-2px"></i>Producción solar</span><span class="ilu">Esquema ilustrativo</span></figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="como" class="sec sec--arena">
     <div class="wrap">
-      <div class="sec__cab">
-        <span class="eyebrow">Cómo trabajamos</span>
+      <div class="cabeza">
         <h2 class="h2">Tres pasos. Ni uno más.</h2>
+        <p class="entrada">Para empezar solo necesitamos tu última factura.</p>
       </div>
-      <div class="rejilla">
-        <div class="caja"><span class="num">1</span><h3>Nos envías tu factura</h3><p>La última de luz o de gas. Con eso basta para empezar.</p></div>
-        <div class="caja"><span class="num">2</span><h3>Comparamos por ti</h3><p>Comparamos tu precio con las ofertas de varias comercializadoras y te mandamos el estudio por escrito, con el ahorro en euros al año.</p></div>
-        <div class="caja"><span class="num">3</span><h3>Nos ocupamos del cambio</h3><p>Si decides cambiar, tramitamos todo. Tú solo nos pasas la documentación.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios" class="sec">
-    <div class="wrap">
-      <div class="sec__cab">
-        <span class="eyebrow">Servicios</span>
-        <h2 class="h2">Lo que hacemos por tu empresa</h2>
-      </div>
-      <div class="rejilla">
-        <div class="caja caja--borde"><h3>Luz y gas</h3><p>Para pymes, comercios e industria, también con tarifas 3.0TD y 6.XTD. Buscamos la oferta que mejor encaja con tu consumo real.</p></div>
-        <div class="caja caja--borde"><h3>Renovaciones</h3><p>Cuando tu contrato se acerca al final, volvemos a revisarlo para que no te quedes con un precio que ya no te conviene.</p></div>
-        <div class="caja caja--borde"><h3>Certificados de Ahorro Energético</h3><p>Para instaladoras de aerotermia y empresas de SATE: te ayudamos a sacar partido de los CAE de tus obras.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec rojo">
-    <div class="rojo__sol" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="col">
-        <h2 class="h2">Sin letra pequeña, de verdad.</h2>
-        <p>Detrás de cada estudio hay una persona, no un call center. Te explicamos tu factura en tu idioma y te decimos la verdad, aunque no te convenga cambiar.</p>
-      </div>
-      <div class="col">
-        <ul class="lista">
-          <li>Comparamos varias comercializadoras, no te vendemos una sola.</li>
-          <li>El ahorro, en euros al año y por escrito.</li>
-          <li>Si no hay ahorro, no hay propuesta.</li>        </ul>
-      </div>
+      <ol class="pasos">
+        <li><h3 class="h3">Nos envías tu factura</h3><p>La última de luz o de gas, en PDF o en foto. Desde esta web o por correo.</p></li>
+        <li><h3 class="h3">Te mandamos el estudio</h3><p>Por escrito, con tu precio actual, la mejor oferta que encontramos y el ahorro en euros al año.</p></li>
+        <li><h3 class="h3">Nos ocupamos del cambio</h3><p>Si decides cambiar, tramitamos todo. Sin cortes, sin obras y sin cambiar de instalación.</p></li>
+      </ol>
     </div>
   </section>
 
   <section id="colaboradores" class="sec colab">
     <div class="wrap">
-      <div class="col">
-        <span class="eyebrow">Colaboradores</span>
+      <div>
         <h2 class="h2">¿Tienes clientes que pagan de más?</h2>
-        <p>Asesorías, administradores de fincas, instaladoras y comerciales: tú nos presentas al cliente y nosotros hacemos el estudio y todo el trámite. Hablemos de cómo colaborar.</p>
+        <p class="entrada" style="margin-top:20px">Asesorías, administradores de fincas, instaladoras y comerciales: tú nos presentas al cliente y nosotros hacemos el estudio y todo el trámite.</p>
       </div>
-      <a href="#factura" class="btn btn--tinta" data-motivo="Quiero colaborar">Quiero colaborar</a>
+      <a href="#factura" class="btn btn--claro" data-motivo="Quiero colaborar">Quiero colaborar</a>
     </div>
   </section>
 
-  <section id="factura" class="sec sec--arena form-sec">
+  <section id="factura" class="sec form-sec">
     <div class="wrap">
-      <div class="col">
-        <span class="eyebrow">Sin compromiso</span>
+      <div class="form-sec__txt">
         <h2 class="h2">Envíanos tu factura</h2>
-        <p>Sube tu última factura de luz o de gas y te respondemos con el estudio por escrito.</p>
-        <p>¿Prefieres llamar? <a href="tel:+34692606691">692 606 691</a></p>
-        <p>¿O escribir? <a href="mailto:gorka@etbenergia.es">gorka@etbenergia.es</a></p>
+        <p class="entrada">Te respondemos con el estudio por escrito. Sin compromiso y sin coste.</p>
+        <div class="contacto">
+          <span style="font-weight:400;color:var(--gris)">¿Prefieres hablar?</span>
+          <a class="num" href="tel:+34692606691">692 606 691</a>
+          <a href="mailto:gorka@etbenergia.es">gorka@etbenergia.es</a>
+        </div>
       </div>
       <div class="panel">
         <form id="form" class="form" novalidate>
           <label class="campo">Nombre<input name="nombre" type="text" autocomplete="name" required></label>
           <label class="campo">Empresa<input name="empresa" type="text" autocomplete="organization" required></label>
           <label class="campo">Correo electrónico<input name="email" type="email" autocomplete="email" required></label>
-          <label class="campo">Teléfono <span class="opc">(opcional)</span><input name="telefono" type="tel" autocomplete="tel"></label>
+          <label class="campo"><span>Teléfono <span class="opc">(opcional)</span></span><input name="telefono" type="tel" autocomplete="tel"></label>
           <label class="campo campo--ancho">¿Qué necesitas?
             <select name="motivo" id="motivo">
               <option>Estudio de luz</option>
               <option>Estudio de gas</option>
               <option>Estudio de luz y gas</option>
+              <option>Autoconsumo fotovoltaico</option>
               <option>Certificados de Ahorro Energético (CAE)</option>
               <option>Quiero colaborar</option>
               <option>Otra consulta</option>
             </select>
           </label>
           <div class="subir" id="zona">
-            <input id="archivo" name="archivo" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.webp,application/pdf,image/*" multiple aria-describedby="zona-ayuda">
+            <input id="archivo" name="archivo" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.webp,application/pdf,image/*" multiple aria-describedby="zona-ayuda" aria-label="Sube tu factura">
             <svg class="subir__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
             <div class="subir__t">Sube tu factura</div>
-            <div class="subir__s" id="zona-ayuda">PDF o foto · arrástrala aquí o pulsa · hasta 3 archivos, 10 MB en total</div>
+            <div class="subir__s" id="zona-ayuda">PDF o foto. Arrástrala aquí o pulsa para elegirla. Hasta 3 archivos y 10 MB.</div>
           </div>
           <ul class="archivos" id="lista" aria-live="polite"></ul>
-          <label class="campo campo--ancho">Mensaje <span class="opc">(opcional)</span><textarea name="mensaje" rows="3"></textarea></label>
+          <label class="campo campo--ancho"><span>Mensaje <span class="opc">(opcional)</span></span><textarea name="mensaje" rows="3"></textarea></label>
           <label class="trampa" aria-hidden="true">No rellenar<input name="web" type="text" tabindex="-1" autocomplete="off"></label>
           <label class="check"><input type="checkbox" name="acepto" required><span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y acepto que ETB Energía use mis datos para preparar el estudio y contactarme sobre él.</span></label>
           <div class="aviso" id="aviso" role="alert"></div>
@@ -167,36 +223,40 @@
           <p class="info-legal">Responsable: Gorka Badiola Morera (ETB Energía). Finalidad: preparar tu estudio y responderte. Tus datos no se ceden salvo obligación legal o si decides contratar. Puedes ejercer tus derechos escribiendo a gorka@etbenergia.es. Más información en la <a href="privacidad.html">política de privacidad</a>.</p>
         </form>
         <div class="ok" id="ok" tabindex="-1">
-          <h3>¡Recibido!</h3>
+          <h3>Recibido.</h3>
           <p>Revisamos tu factura y te escribimos con el estudio. Si necesitamos algo más, te llamamos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="faq" class="sec faq">
+  <section id="preguntas" class="sec sec--arena faq">
     <div class="wrap">
       <h2 class="h2">Preguntas frecuentes</h2>
-      <details><summary>¿Cuánto me cuesta?</summary><p>Nada. El estudio y los trámites del cambio no tienen coste para tu empresa.</p></details>
-      <details><summary>¿Se corta la luz al cambiar de compañía?</summary><p>No. Cambiar de comercializadora no implica cortes ni obras: sigues con la misma instalación y la misma distribuidora.</p></details>
-      <details><summary>¿Qué necesito para empezar?</summary><p>Solo tu última factura. Si decides cambiar, te pediremos el CIF, el DNI del representante y un justificante de la cuenta bancaria.</p></details>
-      <details><summary>¿Con qué compañías trabajáis?</summary><p>Comparamos ofertas de varias comercializadoras y te proponemos la que mejor encaja con tu consumo.</p></details>
-      <details><summary>¿Y si ya tengo un buen precio?</summary><p>Te lo decimos. Si no hay ahorro, no te hacemos ninguna propuesta.</p></details>
+      <div>
+        <details><summary>¿Cuánto me cuesta?</summary><p>Nada. El estudio y los trámites del cambio no tienen coste para tu empresa.</p></details>
+        <details><summary>¿Se corta la luz al cambiar de compañía?</summary><p>No. Cambiar de comercializadora no implica cortes ni obras: sigues con la misma instalación y la misma distribuidora.</p></details>
+        <details><summary>¿Qué necesito para empezar?</summary><p>Solo tu última factura. Si decides cambiar, te pediremos el CIF, el DNI del representante y un justificante de la cuenta bancaria.</p></details>
+        <details><summary>¿Con qué compañías trabajáis?</summary><p>Comparamos ofertas de varias comercializadoras y te proponemos la que mejor encaja con tu consumo.</p></details>
+        <details><summary>¿Y si ya tengo un buen precio?</summary><p>Te lo decimos. Si no hay ahorro, no te hacemos ninguna propuesta.</p></details>
+        <details><summary>¿Qué es un CAE y quién lo puede pedir?</summary><p>Un Certificado de Ahorro Energético reconoce 1 kWh de ahorro de energía final al año conseguido con una obra de eficiencia, como cambiar una caldera por aerotermia o aislar con SATE. El ahorro pertenece a quien hace la inversión, y se puede vender a las empresas energéticas obligadas a ahorrar.</p></details>
+        <details><summary>¿Me compensa poner placas solares?</summary><p>Depende de cuándo consumes. Si tu empresa gasta sobre todo de día, suele tener sentido; si consume de noche, menos. Lo vemos con tus facturas antes de pedir ningún presupuesto.</p></details>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="pie">
   <div class="wrap">
-    <div class="pie__col">
-      <span class="logo logo--blanco" style="font-size:2.4rem;align-self:flex-start;margin-top:8px"><span>ETB</span></span>
-      <span>Tu energía, sin letra pequeña.</span>
+    <div>
+      <span class="logo logo--blanco" style="font-size:2.4rem"><span>ETB</span></span>
+      <p class="pie__lema">Tu energía, sin letra pequeña.</p>
     </div>
     <div class="pie__col">
       <strong>Contacto</strong>
-      <a href="tel:+34692606691">692 606 691</a>
+      <a class="num" href="tel:+34692606691">692 606 691</a>
       <a href="mailto:gorka@etbenergia.es">gorka@etbenergia.es</a>
-      <span>Madrid · Toda España</span>
+      <span>Madrid, para toda España</span>
     </div>
     <div class="pie__col">
       <strong>Legal</strong>
@@ -205,9 +265,25 @@
       <a href="cookies.html">Política de cookies</a>
     </div>
   </div>
-  <div class="pie__base">© <span id="anio">2026</span> ETB Energía · Gorka Badiola Morera</div>
+  <div class="pie__base"><div class="wrap"><span>© <span id="anio">2026</span> ETB Energía. Gorka Badiola Morera.</span><span>Luz, gas, autoconsumo y CAE para empresas.</span></div></div>
 </footer>
 
 <script src="assets/form.js" defer></script>
+<script>
+{
+  // Esquema ilustrativo: perfil de consumo típico de una empresa en horario de día y curva solar.
+  const W = 500, X0 = 40, Y0 = 250, H = 200;
+  const consumo = [.18,.17,.17,.17,.18,.2,.32,.58,.82,.9,.92,.9,.8,.84,.9,.88,.8,.6,.38,.28,.24,.22,.2,.19];
+  const ancho = W / 24;
+  document.getElementById('barras').innerHTML = consumo.map((v, h) =>
+    `<rect x="${(X0 + h * ancho + 3).toFixed(1)}" y="${(Y0 - v * H).toFixed(1)}" width="${(ancho - 6).toFixed(1)}" height="${(v * H).toFixed(1)}" rx="2"/>`).join('');
+  let d = `M ${X0 + 6.5 * ancho} ${Y0}`;
+  for (let t = 6.5; t <= 19.5; t += .25) {
+    const s = Math.max(0, Math.sin(Math.PI * (t - 6.5) / 13));
+    d += ` L ${(X0 + t * ancho).toFixed(1)} ${(Y0 - s * .95 * H).toFixed(1)}`;
+  }
+  document.getElementById('sol').setAttribute('d', d + ' Z');
+}
+</script>
 </body>
 </html>
