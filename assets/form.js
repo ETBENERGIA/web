@@ -1,6 +1,6 @@
 (function () {
   // URL de la aplicación web de Google Apps Script (cuenta gorka@etbenergia.es) que envía la factura a estudios@etbenergia.es
-  var ENDPOINT = "__ENDPOINT__";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycby62uy7Mf4j99jseh_0DzTb_5emMykpDD0oqc-xLw6ce99wZkz9N8CIfgZiS7kgNBLf/exec";
   var MAX_ARCHIVOS = 3;
   var MAX_BYTES = 10 * 1024 * 1024;
 
