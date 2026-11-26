@@ -151,17 +151,22 @@
         </div>
       </div>
       <div class="aparece">
+        <div class="temporadas" role="group" aria-label="Temporada">
+          <button type="button" data-temp="alta" aria-pressed="false">Alta<small>ene, feb, jul, dic</small></button>
+          <button type="button" data-temp="mediaalta" aria-pressed="false">Media alta<small>mar, nov</small></button>
+          <button type="button" data-temp="media" aria-pressed="false">Media<small>jun, ago, sep</small></button>
+          <button type="button" data-temp="baja" aria-pressed="false">Baja<small>abr, may, oct</small></button>
+        </div>
         <div class="barras" id="barras" aria-hidden="true"><span class="burbuja" id="burbuja"></span></div>
         <div class="eje" aria-hidden="true"><span>0 h</span><span>6 h</span><span>12 h</span><span>18 h</span><span>24 h</span></div>
         <div class="tarifa__pie">
-          <p id="nota-dia" aria-live="polite">En días laborables, la punta va de 10 a 14 y de 18 a 22. Mover consumo fuera de esas horas, o pagarlas a mejor precio, es donde suele estar el ahorro.</p>
-          <ul class="leyenda">
-            <li><i style="background:var(--rojo)"></i>Punta</li>
-            <li><i style="background:var(--sol)"></i>Llano</li>
-            <li><i style="background:var(--valle)"></i>Valle</li>
-          </ul>
+          <div>
+            <p id="nota-dia" aria-live="polite">En una 3.0TD cada hora cae en uno de seis periodos, del P1 (el más caro) al P6 (el más barato), según la temporada y el tipo de día.</p>
+            <p class="tarifa__extra">Mover consumo a los periodos baratos, o pagar mejor precio en los caros, es donde suele estar el ahorro.</p>
+          </div>
+          <ul class="leyenda" id="leyenda"></ul>
         </div>
-        <p class="nota-esquema">Periodos de la tarifa 2.0TD (hasta 15 kW). Esquema, no precios reales. Las tarifas 3.0TD y 6.XTD tienen seis periodos: los leemos en tu factura.</p>
+        <p class="nota-esquema">Periodos de la tarifa 3.0TD (más de 15 kW) en la Península. Baleares, Canarias, Ceuta y Melilla tienen su propio calendario. Esquema, no precios reales.</p>
       </div>
     </div>
   </section>

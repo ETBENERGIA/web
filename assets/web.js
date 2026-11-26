@@ -72,24 +72,31 @@
     document.querySelectorAll(".aparece").forEach(function (el) { el.classList.add("visto"); });
   }
 
-  /* Periodos de la tarifa 2.0TD por horas (esquema, no precios) */
+  /* Periodos de la tarifa 3.0TD en la Península por horas (esquema, no precios).
+     Laborables: 9-14 y 18-22 (franja cara), 8-9, 14-18 y 22-24 (franja media), 0-8 P6.
+     Fines de semana y festivos nacionales: P6 todo el día. */
   var barras = document.getElementById("barras");
   var burbuja = document.getElementById("burbuja");
   var notaDia = document.getElementById("nota-dia");
   if (barras) {
-    var nombres = { p: "Punta", l: "Llano", v: "Valle" };
-    var colores = { p: "var(--rojo)", l: "var(--sol)", v: "var(--valle)" };
-    var alto = { v: 30, l: 60, p: 94 };
+    var temporadas = {
+      alta: { nombre: "alta", meses: "enero, febrero, julio y diciembre", cara: 1, media: 2 },
+      mediaalta: { nombre: "media alta", meses: "marzo y noviembre", cara: 2, media: 3 },
+      media: { nombre: "media", meses: "junio, agosto y septiembre", cara: 3, media: 4 },
+      baja: { nombre: "baja", meses: "abril, mayo y octubre", cara: 4, media: 5 }
+    };
+    var porMes = ["alta", "alta", "mediaalta", "baja", "baja", "media", "alta", "media", "media", "baja", "mediaalta", "alta"];
+    var alto = { 1: 94, 2: 81, 3: 68, 4: 56, 5: 43, 6: 28 };
     var vaiven = [0, 3, -2, 4, -3, 2, 5, -4, 3, -2, 4, 1, -3, 2, 5, -2, 3, -4, 2, 5, -3, 1, 4, -2];
     var finde = false;
-    var notas = {
-      laborable: "En días laborables, la punta va de 10 a 14 y de 18 a 22. Mover consumo fuera de esas horas, o pagarlas a mejor precio, es donde suele estar el ahorro.",
-      finde: "Sábados, domingos y festivos nacionales, todo el día es valle. Si tu negocio abre en fin de semana, eso cambia qué tarifa te conviene."
-    };
+    var temp = porMes[new Date().getMonth()];
+    var hoy = document.querySelector('[data-temp="' + temp + '"]');
+    if (hoy) hoy.classList.add("hoy");
     function periodo(h) {
-      if (finde || h < 8) return "v";
-      if ((h >= 10 && h < 14) || (h >= 18 && h < 22)) return "p";
-      return "l";
+      var t = temporadas[temp];
+      if (finde || h < 8) return 6;
+      if ((h >= 9 && h < 14) || (h >= 18 && h < 22)) return t.cara;
+      return t.media;
     }
     var celdas = [];
     for (var h = 0; h < 24; h++) {
@@ -102,20 +109,35 @@
       barras.appendChild(b);
       celdas.push(s);
     }
+    var leyenda = document.getElementById("leyenda");
+    if (leyenda) leyenda.innerHTML = [1, 2, 3, 4, 5, 6].map(function (p) {
+      return '<li data-p="' + p + '"><i style="background:var(--p' + p + ')"></i>P' + p + (p === 1 ? " · más caro" : p === 6 ? " · más barato" : "") + "</li>";
+    }).join("");
     function pintar() {
+      var t = temporadas[temp];
+      var usados = {};
       celdas.forEach(function (s, i) {
         var p = periodo(i);
+        usados[p] = true;
         s.style.setProperty("--h", (alto[p] + vaiven[i]) + "%");
-        s.style.setProperty("--c", colores[p]);
+        s.style.setProperty("--c", "var(--p" + p + ")");
         s.parentNode.setAttribute("data-p", p);
       });
-      notaDia.textContent = finde ? notas.finde : notas.laborable;
+      if (leyenda) leyenda.querySelectorAll("li").forEach(function (li) { li.style.opacity = usados[li.getAttribute("data-p")] ? "1" : ".35"; });
+      notaDia.textContent = finde
+        ? "Sábados, domingos y festivos nacionales: P6, el periodo más barato, las 24 horas y en cualquier temporada."
+        : "Temporada " + t.nombre + " (" + t.meses + "), de lunes a viernes: P" + t.cara + " de 9 a 14 y de 18 a 22; P" + t.media + " de 8 a 9, de 14 a 18 y de 22 a 24; P6 de 0 a 8.";
+      document.querySelectorAll("[data-temp]").forEach(function (o) {
+        o.setAttribute("aria-pressed", o.getAttribute("data-temp") === temp ? "true" : "false");
+        o.disabled = finde;
+        o.style.opacity = finde ? ".45" : "";
+      });
     }
     function mostrar(e) {
       var b = e.target.closest(".barra");
       if (!b) { burbuja.classList.remove("ver"); return; }
       var i = +b.getAttribute("data-h");
-      burbuja.textContent = (i < 10 ? "0" : "") + i + ":00–" + (i + 1 < 10 ? "0" : "") + (i + 1) + ":00 · " + nombres[b.getAttribute("data-p")];
+      burbuja.textContent = (i < 10 ? "0" : "") + i + ":00–" + (i + 1 < 10 ? "0" : "") + (i + 1) + ":00 · P" + b.getAttribute("data-p");
       burbuja.style.left = (b.offsetLeft + b.offsetWidth / 2) + "px";
       burbuja.classList.add("ver");
     }
@@ -128,6 +150,9 @@
         document.querySelectorAll("[data-dia]").forEach(function (o) { o.setAttribute("aria-pressed", o === btn ? "true" : "false"); });
         pintar();
       });
+    });
+    document.querySelectorAll("[data-temp]").forEach(function (btn) {
+      btn.addEventListener("click", function () { temp = btn.getAttribute("data-temp"); pintar(); });
     });
     if (quieto || !("IntersectionObserver" in window)) pintar();
     else new IntersectionObserver(function (e, o) {
